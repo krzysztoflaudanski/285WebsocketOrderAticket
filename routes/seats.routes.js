@@ -33,6 +33,7 @@ router.post('/', (req, res) => {
             db.seats.push(newSeat);
             res.status(201).json({ message: 'OK' });
             req.io.emit('seatsUpdate', db.seats)
+            console.log(db.seats)
         }
     } else {
         res.status(400).json({ error: 'Invalid data format' });
